@@ -1,5 +1,6 @@
 library(car)
 library(dplyr)
+library(ggpubr)
 #n R, a package is a collection of R functions, data and compiled code. 
 #The location where the packages are stored is the library. 
 # You can download  a particular package from the appropriate site and it will be stored in your library.
@@ -42,14 +43,14 @@ ggplot(data=fluo2,aes(treatment,fluorescencia)) +
   geom_boxplot(fill = "white", col = "black") + 
   geom_point(position = position_jitter(0.3), color = "black") +
   stat_summary(fun="mean", colour="red", size=1) +
-  scale_y_continuous(expand = c(0,0), limits = c(0,300))+
+  scale_y_continuous(limits = c(0,350))+
+  scale_x_discrete()+
   theme_classic() +
-  labs(title="Flourescence measurement after exposure",
+  labs(title="Flourescence measurement",
   x ="Treatment", y = "Fluorescence (A.U)")+
   theme(axis.text = element_text(size = 12),
-  axis.title = element_text(size=13,face="bold"))
-  
-  
+  axis.title = element_text(size=13,face="bold")) +
+  stat_compare_means(method = "t.test",label.x = 1.4, label.y = 330, size = 4)
 
 
 ##### COLUMN BARS + SD #####
