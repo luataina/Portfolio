@@ -82,10 +82,9 @@ pacman::p_load(ggpmisc)
 ggplot(data = data, mapping = aes(x = Publicity, y = Sales)) +
   geom_point() +
   geom_smooth(method = "lm", col = "red") +
-  stat_poly_eq(formula = data$Sales ~ data$Publicity,
-               aes(label = paste(..eq.label.., ..adj.rr.label..,
-                                 sep = "*plain(\",\")~~")),
-               label.x 5, label.y 400,
-               parse = TRUE coef.digits = 3 f.digits = 3 p.digits = 3) 
+  stat_cor(aes(label = paste(..rr.label..,..p.label.., sep = "~`,`~")), label.x = 3, label.y = 400) +
+  stat_poly_eq(aes(label = paste(..eq.label.., sep = "~~~")), parse = TRUE, coef.digits = 4,
+  f.digits = 4, p.digits = 3, label.y = 0.9, label.x = 0.05) +
+  theme_classic() 
 
 
