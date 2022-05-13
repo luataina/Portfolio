@@ -21,7 +21,7 @@ for (i in 1:1000) {
 sample1 <- sample[,1]
 hist(sample1, col = "red")
 
-# Mena and standard deviation from exponential population distribution
+# Mean and standard deviation from exponential population distribution
 mean_exp <- 1/lambda
 sd_exp <- (1/lambda)/sqrt(n)
 
