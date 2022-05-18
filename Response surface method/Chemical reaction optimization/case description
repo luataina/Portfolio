@@ -1,0 +1,20 @@
+This is an example of a factorial design used to optimize the yield of a chemical reaction based on two independent variables: time and temperature.
+The example and data are from the book Design and Analysis of Experiments, Douglas C. Montgomery, and I do the code implementation on R and graph creation.
+
+Problem description:
+“A chemical engineer is interested in determining the operating conditions that maximize the yield of a process. 
+Two controllable variables influence process yield: reaction time and reaction temperature. 
+The engineer is currently operating the process with a reaction time of 35 minutes and a temperature of 155∘F, which results in yields of around 40 percent. 
+Because it is unlikely that this region contains the optimum, she fits a first-order model and applies the steepest ascent method.”
+
+1° step
+checking the plausibility of quadratic fitting for the first trial experiment, fig 1A-B
+
+2° step 
+Based on the angular coefficient of the line provided by the first trial experiment (using x1 and x2 coefficient of effect) I used the steepest ascent method to walk towards the optimum region. 
+This coefficient provides the fastest direction where the yield grows. The technique showed step 10 (x1) as the highest yield, fig 2A. 
+
+3° step
+In the region where the yield is maximized based on the steepest ascent of the trial experiment (step 10 fig 2A). 
+It’s performed regression using interaction and quadratic terms on this vicinity. 
+This analysis showed that we are near the optimum region, as the curvature of the contour graph demonstrated, fig 3A-B.
